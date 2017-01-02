@@ -34,11 +34,11 @@ class Slugify implements FilterInterface
     {
         $value = strtr($value, $this->rules);
         
-        if ($options['lowercase']) {
+        if ($this->options['lowercase']) {
             $value = mb_strtolower($value);
-        }
+        }        
         
-        $string = $value = preg_replace($options['regexp'], $options['separator'], $value);
+        $string = $value = preg_replace($this->options['regexp'], $this->options['separator'], $value);
         
         return trim($value, $options['separator']);
     }
@@ -69,6 +69,11 @@ class Slugify implements FilterInterface
         return $this;
     }
 
+    public function activateRuleSet($ruleSet)
+    {
+        return $this->addRules($ruleSet);
+    }
+    
     protected $options = array(
         'regexp' => '/([^A-Za-z0-9]|-)+/',
         'separator' => '-',
