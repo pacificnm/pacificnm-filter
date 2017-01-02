@@ -1,0 +1,16 @@
+{
+    "name": "pacificnm/pacificnm-filter",
+    "description": "Filters for PacificNM",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Jaimie Garner",
+            "email": "pacificnm@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"php" : ">=5.5"
+    }
+}
